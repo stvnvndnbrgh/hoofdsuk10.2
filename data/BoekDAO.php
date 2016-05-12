@@ -34,6 +34,6 @@ class BoekDAO {
     }
     
     public function create($titel, $genreID) {
-        $sql = "insert into mvc_boeken (titel, genre_id"
+        $sql = "insert into mvc_boeken (titel, genre_id";
     }
 }
