@@ -24,7 +24,7 @@
                 ?>
             <tr>
                 <td>
-                    <?php print($boek->getTitel());?>
+                    <a href="updateboek.php?id="<?php print($boek->getId());?>"><?php print($boek->getTitel());?></a>
                 </td>
                 <td>
                     <?php print($boek->getGenre()->getGenreNaam());?>
