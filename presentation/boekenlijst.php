@@ -17,6 +17,7 @@
             <tr>
                 <th>Titel</th>
                 <th>Genre</th>
+                <th></th>
             </tr>
             <?php
             foreach($boekenLijst as $boek) {
@@ -27,6 +28,9 @@
                 </td>
                 <td>
                     <?php print($boek->getGenre()->getGenreNaam());?>
+                </td>
+                <td>
+                    <a href="verwijderboek.php,id=<?php print($boek->getId());?>">Verwijder</a>
                 </td>
             </tr>
             <?php
