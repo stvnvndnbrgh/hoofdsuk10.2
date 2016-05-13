@@ -37,7 +37,7 @@ class BoekDAO {
         $sql = "insert into mvc_boeken (titel, genre_id) values (:titel, :genreID)";
         $dbh = new PDO (DBConfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
         $stmt = $dbh->prepare($sql);
-        $stmt->execute(array(':titel' => $title, ':genreID' => $genreID));
+        $stmt->execute(array(':titel' => $titel, ':genreID' => $genreID));
         
         $boekId = $dbh->lastInsertId();
         $dbh = null;
