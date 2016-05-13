@@ -24,13 +24,13 @@
                 ?>
             <tr>
                 <td>
-                    <a href="updateboek.php?id="<?php print($boek->getId());?>"><?php print($boek->getTitel());?></a>
+                    <a href="updateboek.php?id=<?php print($boek->getId());?>"><?php print($boek->getTitel());?></a>
                 </td>
                 <td>
                     <?php print($boek->getGenre()->getGenreNaam());?>
                 </td>
                 <td>
-                    <a href="verwijderboek.php,id=<?php print($boek->getId());?>">Verwijder</a>
+                    <a href="verwijderboek.php?id=<?php print($boek->getId());?>">Verwijder</a>
                 </td>
             </tr>
             <?php
