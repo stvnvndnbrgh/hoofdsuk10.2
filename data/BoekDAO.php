@@ -34,6 +34,17 @@ class BoekDAO {
     }
     
     public function create($titel, $genreID) {
-        $sql = "insert into mvc_boeken (titel, genre_id";
+        $sql = "insert into mvc_boeken (titel, genre_id) values (:titel, :genreID)";
+        $dbh = new PDO (DBConfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute(array(':titel' => $title, ':genreID' => $genreID));
+        
+        $boekId = $dbh->lastInsertId();
+        $dbh = null;
+        
+        $genreDAO = new GenreDAO();
+        $genre = $genreDAO->getById($genreId);
+        $boek = Boek::create($boekId, $titel, $genre);
+        return $boek;
     }
 }
