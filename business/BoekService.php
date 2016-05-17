@@ -1,5 +1,7 @@
 <?php
 //business/BoekService.php
+//namespace BoekApplicatie\Service;
+
 require_once 'data/BoekDAO.php';
 
 class BoekService {
